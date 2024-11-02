@@ -1,0 +1,53 @@
+:root {
+    /* Main Color: Earthy Brown */
+    --main-color: #8B5A2B; /* Rich brown color */
+
+    /* Secondary Color: Tea Leaf Green */
+    --secondary-color: #458847; /* Tea leaf green */
+
+    /* Accent Color: Light Cream */
+    --accent-color: #FAF3E0; /* Soft, light cream color */
+}
+
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../assets/images/bp.png'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+
+#get-started-btn {
+    background-color: transparent;
+    color: white;
+    border:  1px white solid;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+#get-started-btn:hover {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2rem; 
+    }
+
+    .app-name {
+        font-size: 3rem; 
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .hero {
+        text-align: center; 
+    }
+}
