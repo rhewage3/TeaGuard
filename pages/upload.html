@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,11 +14,8 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="assets/aos/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
-
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="manifest" href="./manifest.json">
 
 </head>
@@ -25,7 +23,7 @@
 <body>
     <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
         <div class="container px-4">
-            <img src="assets/images/logog_name-removebg-preview.png" alt="name_logo">
+            <img src="../assets/images/logog_name-removebg-preview.png" alt="name_logo">
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#top-navbar" aria-controls="top-navbar">
                 <i class="bi bi-list"></i>
@@ -34,22 +32,23 @@
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#top-navbar" aria-controls="top-navbar">
                     <div class="d-flex justify-content-between p-3">
-                        <img src="assets/images/logog_name-removebg-preview.png" alt=""
+                        <img src="../assets/images/logog_name-removebg-preview.png" alt=""
                             style="height: 20px; width: 150px;">
                         <i class="bi bi-x-lg"></i>
                     </div>
+
                 </button>
                 <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link" href="pages/upload.html">Upload</a>
+                        <a class="nav-link" href="#">Upload</a>
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link" href="#">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown px-3 px-lg-0 py-1 py-lg-4">
+                    <li class="nav-item dropdown  px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Resources
@@ -62,43 +61,35 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 
-    <section class="hero py-5 d-flex align-items-center" data-aos="fade-up" data-aos-duration="800">
-        <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+
+    <secttion class="hero py-5" id="hero">
+        <div class="container px-4">
             <div class="row">
-                <div class="col-md-6" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
-                    <p class="mb-4">
-                        <span class="d-block fs-2 fw-light" data-aos="fade-right" data-aos-delay="300"
-                            data-aos-duration="800">Welcome to</span>
-                        <span class="d-block display-3 fw-bold text-success" data-aos="fade-right" data-aos-delay="400"
-                            data-aos-duration="800">TEAGUARD</span>
-                        <span class="d-block lead mt-3" data-aos="fade-right" data-aos-delay="500"
-                            data-aos-duration="800">
-                            Discover the power of AI-driven insights for healthier tea crops and optimized harvests.
-                            TeaGuard helps you detect diseases early and assess ripeness accurately, ensuring quality
-                            production with ease.
-                        </span>
-                    </p>
-                    <a href="#" class="btn btn-primary btn-lg" id="get-started-btn" data-aos="fade-up"
-                        data-aos-delay="600" data-aos-duration="800">Get Started</a>
+                <div class="col-md-12">
+                    <h1 class="py-2 text-center fw-bold">Upload</h1>
+                </div>
+                <div class="col-md-12 px-lg-0">
+                    <div class="welcome-description mt-4 text-center">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda doloribus qui velit
+                            eligendi, nisi voluptas laboriosam corrupti in ipsam error quasi dolor dolores veniam
+                            voluptatum atque reiciendis ad. Odit.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </secttion>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap Bundle with Popper (JavaScript) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/aos/aos.js"></script>
+    <!-- Test jQuery -->
 
-    <script>
-        AOS.init();
-    </script>
 </body>
 
 </html>
