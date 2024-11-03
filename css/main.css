@@ -11,6 +11,27 @@
     --accent-color: #FAF3E0; /* Soft, light cream color */
 }
 
+/* Scrollbar Track */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar Track Background */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Hover effect on Scrollbar Thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-color); /* Darker color on hover */
+}
 
 
 body{
@@ -118,5 +139,20 @@ section {
     background-color: #256327;
   }
 
+
+
+  #signin {
+    background-color: #458847; 
+    color: white;
+    border-radius: 0.8rem;
+    transition: 0.3s;
+  }
+
+  #signin:hover {
+    border: 1px solid var(--secondary-color);
+    background-color: white;
+    color: var(--secondary-color);
+
+  }
 
   /* test */
