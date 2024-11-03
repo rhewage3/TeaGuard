@@ -70,7 +70,7 @@ img {
 
 /* Dropdown item hover effect */
 .dropdown-menu .dropdown-item:hover {
-    background-color: var(--accent-color); /* Use accent color on hover */
+    background-color: #a2d4a3; /* Use accent color on hover */
 }
 
 .dropdown .dropdown-item {

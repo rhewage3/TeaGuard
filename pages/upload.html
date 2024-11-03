@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeaGuard Detection App - Test</title>
+    <title>TeaGuard Detection App - Upload</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,39 +18,57 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="manifest" href="./manifest.json">
 
+    <style>
+        .upload-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../assets/images/disease.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 5rem 0;
+        }
+
+        /* Drag and Drop Style */
+        .upload-area {
+            border: 2px dashed #4CAF50;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-area:hover {
+            background-color: #f0f8e2;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
         <div class="container px-4">
             <img src="../assets/images/logog_name-removebg-preview.png" alt="name_logo">
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#top-navbar" aria-controls="top-navbar">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
                 <i class="bi bi-list"></i>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="top-navbar" aria-labelledby="top-navbarLabel">
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#top-navbar" aria-controls="top-navbar">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
                     <div class="d-flex justify-content-between p-3">
-                        <img src="../assets/images/logog_name-removebg-preview.png" alt=""
-                            style="height: 20px; width: 150px;">
+                        <img src="../assets/images/logog_name-removebg-preview.png" alt="" style="height: 20px; width: 150px;">
                         <i class="bi bi-x-lg"></i>
                     </div>
-
                 </button>
                 <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link" href="#">Upload</a>
+                        <a class="nav-link" href="pages/upload.html">Detect</a>
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link" href="#">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown  px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                    <li class="nav-item dropdown px-3 px-lg-0 py-1 py-lg-4">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Resources
                         </a>
                         <ul class="dropdown-menu">
@@ -59,37 +77,97 @@
                             <li><a class="dropdown-item" href="#">FAQ</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+                        <a class="nav-link text-center" href="#" id="signin">Sign In</a>
+                    </li>
                 </ul>
             </div>
-
         </div>
     </nav>
 
-
-    <secttion class="hero py-5" id="hero">
-        <div class="container px-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="py-2 text-center fw-bold">Upload</h1>
-                </div>
-                <div class="col-md-12 px-lg-0">
-                    <div class="welcome-description mt-4 text-center">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda doloribus qui velit
-                            eligendi, nisi voluptas laboriosam corrupti in ipsam error quasi dolor dolores veniam
-                            voluptatum atque reiciendis ad. Odit.</p>
-                    </div>
+    <!-- Hero Section -->
+    <!-- <section class="upload-hero py-5 d-flex align-items-center text-center text-light" data-aos="fade-up" data-aos-duration="800">
+        <div class="container" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold">Upload Your Tea Leaf Image</h1>
+                    <p class="lead mt-3">Select the type of analysis you want to perform and upload a clear image of your tea leaves for an instant assessment.</p>
                 </div>
             </div>
         </div>
-    </secttion>
+    </section> -->
+
+    <section class="upload-hero py-5 d-flex align-items-center" data-aos="fade-up" data-aos-duration="800">
+        <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold">Upload Your Tea Leaf Image</h1>
+                    <p class="lead mt-3">Select the type of analysis you want to perform and upload a clear image of your tea leaves for an instant assessment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detection Type Selection and Upload Area -->
+    <section class="detection-options py-5">
+        <div class="container">
+            <!-- Selection Options -->
+            <div class="text-center mb-4">
+                <h3>What do you want to detect?</h3>
+                <div class="btn-group mt-3" role="group">
+                    <button class="btn btn-outline-primary" onclick="selectDetection('disease')">Disease Detection</button>
+                    <button class="btn btn-outline-success" onclick="selectDetection('ripeness')">Ripeness Detection</button>
+                </div>
+            </div>
+
+            <!-- Upload Area -->
+            <div class="upload-area mt-5" id="upload-area">
+                <h4 id="upload-heading">Upload an Image</h4>
+                <p class="mb-3">Drag and drop an image here or click to upload.</p>
+                <input type="file" id="imageUpload" class="form-control" accept="image/*" style="display: none;" onchange="handleImage(this)">
+                <button class="btn btn-primary" onclick="document.getElementById('imageUpload').click()">Choose File</button>
+                <div id="image-preview" class="mt-4"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap Bundle with Popper (JavaScript) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Test jQuery -->
+    <script>
+        // Function to handle detection type selection
+        function selectDetection(type) {
+            const heading = document.getElementById("upload-heading");
+            if (type === "disease") {
+                heading.innerText = "Upload Image for Disease Detection";
+            } else if (type === "ripeness") {
+                heading.innerText = "Upload Image for Ripeness Detection";
+            }
+        }
 
+        // Function to preview image on upload
+        function handleImage(input) {
+            const file = input.files[0];
+            const previewContainer = document.getElementById("image-preview");
+            previewContainer.innerHTML = ""; // Clear previous preview
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.alt = "Uploaded Image";
+                    img.style.maxWidth = "100%";
+                    img.style.borderRadius = "8px";
+                    previewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 
 </html>
