@@ -35,14 +35,14 @@
 }
 
 
-#download-btn {
+#download-app-btn {
     background-color: transparent;
     color: white;
     border:  1px white solid;
     border-radius: 0.5rem;
     transition: 0.3s;
 }
-#download-btn:hover {
+#download-app-btn:hover {
     background-color: white;
     color: var(--secondary-color);
 }

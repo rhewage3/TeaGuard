@@ -238,13 +238,13 @@
                     <div class="col-12 d-flex justify-content-center">
                         <!-- <a href="#" class="btn btn-primary btn-lg me-2" id="get-started-btn" data-aos="fade-up"
                            data-aos-delay="600" data-aos-duration="800">Get Started</a> -->
-                        <a href="#" class="btn btn-primary btn-lg" id="download-btn" data-aos="fade-up"
-                           data-aos-delay="600" data-aos-duration="800">Download TeaGuard</a>
+                        <a href="#" class="btn btn-primary btn-lg" id="download-app-btn" data-aos="fade-up"
+                            data-aos-delay="600" data-aos-duration="800">Download TeaGuard</a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
 
 
         <section class="testimonials mt-3 pt-5" id="testmonial">
@@ -383,7 +383,7 @@
                                 <a href="#" class="instagram me-2"><i class="bi bi-instagram"></i></a>
                                 <a href="#" class="linkedin me-2"><i class="bi bi-linkedin"></i></a>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -456,6 +456,38 @@
 
     <script>
         AOS.init();
+
+
+
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            // Show the install button
+            document.getElementById('download-app-btn').style.display = 'inline-block';
+        });
+
+        document.getElementById('download-app-btn').addEventListener('click', (e) => {
+            // Check if the deferredPrompt is available
+            if (deferredPrompt) {
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    // Clear the deferredPrompt variable, as it can only be used once
+                    deferredPrompt = null;
+                });
+            }
+        });
+
     </script>
 </body>
 
