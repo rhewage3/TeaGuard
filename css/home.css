@@ -35,6 +35,19 @@
 }
 
 
+#download-btn {
+    background-color: transparent;
+    color: white;
+    border:  1px white solid;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+#download-btn:hover {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+
 
 .key-features {
     border-radius: 50%;
@@ -135,13 +148,17 @@
 }
 
 
+.cta p {
+    font-size: 2rem;
+}
+
 .cta-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../assets/images/cta.png'); /* Update with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
-    min-height: 40vh;
+    min-height: 30vh;
     display: flex;
     align-items: center;
   
