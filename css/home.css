@@ -34,6 +34,55 @@
     color: var(--secondary-color);
 }
 
+
+
+.key-features {
+    border-radius: 50%;
+    background-color:#e8f4ea ; 
+    height: 250px;
+     width: 250px;
+}
+
+
+
+#diseases {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/virus.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  background-size: 8.75rem 8.75rem; 
+  transition: transform 0.5s;
+}
+
+#ripeness {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/green-tea.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  background-size: 8.75rem 8.75rem; 
+  transition: transform 0.5s;
+}
+
+#quality {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/quality.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  background-size: 8.75rem 8.75rem; 
+  transition: transform 0.5s;
+}
+
+
+
 @media (max-width: 768px) {
     .welcome-title {
         font-size: 2rem; 
@@ -51,3 +100,6 @@
         text-align: center; 
     }
 }
+
+
+
