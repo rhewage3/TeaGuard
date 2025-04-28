@@ -18,10 +18,19 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
 
+        <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <!-- ios suppourt -->
     <link rel="apple-touch-icon" href="assets/images/icons/icon_96x96.png">
     <!-- manifest file -->
-    <link rel="manifest" href="./manifest.json">
+    <!-- <link rel="manifest" href="./static/manifest.json"> -->
+    <link rel="manifest" href="/static/manifest.json">
+
 
 
 </head>
@@ -30,7 +39,7 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
         <div class="container px-4">
-            <a href="index.html"><img src="assets/images/logog_name-removebg-preview.png" alt="name_logo"></a>
+            <a href="javascript:void(0)" onclick="loadHomePage()"><img src="../assets/images/logog_name-removebg-preview.png" alt="name_logo"></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#top-navbar" aria-controls="top-navbar">
                 <i class="bi bi-list"></i>
@@ -46,13 +55,17 @@
                 </button>
                 <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="javascript:void(0)" onclick="loadHomePage(); closeOffcanvas()">Home</a>
+    
                     </li>
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link" href="pages/upload.html">Detect</a>
+                        <a class="nav-link" href="javascript:void(0)" onclick="fetchDetectPage(); closeOffcanvas()">Detect</a>
                     </li>
+                    
+    
+    
                     <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="javasceipt:void(0)"onclick="fetchDashbordPage(); closeOffcanvas()">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown px-3 px-lg-0 py-1 py-lg-4">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -60,14 +73,17 @@
                             Resources
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Disease Guide</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="fetchGuidePage(); closeOffcanvas()">Disease Guide</a></li>
                             <li><a class="dropdown-item" href="#">Harvest Tips</a></li>
                             <li><a class="dropdown-item" href="#">FAQ</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                        <a class="nav-link text-center" href="#" id="signin">Sign In</a>
+                    <li class="nav-item px-3 px-lg-0 py-1 py-lg-4" id="user-nav">
+                        <a class="nav-link text-center" href="javascript:void(0)" onclick="fetchSignIn(); closeOffcanvas()" id="signin">
+                            Sign In
+                        </a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
@@ -91,7 +107,7 @@
                             production with ease.
                         </span>
                     </p>
-                    <a href="pages/upload.html" class="btn btn-primary btn-lg" id="get-started-btn" data-aos="fade-up"
+                    <a href="javascript:void(0)" onclick="fetchDetectPage()" class="btn btn-primary btn-lg" id="get-started-btn" data-aos="fade-up"
                         data-aos-delay="600" data-aos-duration="800">Start Scaning</a>
                 </div>
             </div>
@@ -478,41 +494,14 @@
 
     <script src="assets/aos/aos.js"></script>
 
-    <script>
-        AOS.init();
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/requests.js"></script>
+    <script src="js/functions.js"></script>
 
 
-
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
-            e.preventDefault();
-            // Stash the event so it can be triggered later
-            deferredPrompt = e;
-            // Show the install button
-            document.getElementById('download-app-btn').style.display = 'inline-block';
-        });
-
-        document.getElementById('download-app-btn').addEventListener('click', (e) => {
-            // Check if the deferredPrompt is available
-            if (deferredPrompt) {
-                // Show the install prompt
-                deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the install prompt');
-                    } else {
-                        console.log('User dismissed the install prompt');
-                    }
-                    // Clear the deferredPrompt variable, as it can only be used once
-                    deferredPrompt = null;
-                });
-            }
-        });
-
-    </script>
+    
 </body>
 
 </html>
